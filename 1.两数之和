@@ -21,10 +21,8 @@ class Solution:
         :rtype: List[int]
         """
         m = {}
-        for i in range(0,len(nums)):
-            x = nums[i]
-            c = target - x
-            if target - x in m:
-                return [m[target-x], i]
+        for i, v in enumerate(nums):
+            if target - v in m:
+                return [m[target-v], i]
             else:
-                m[nums[i]] = i
+                m[v] = i
